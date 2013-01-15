@@ -7,8 +7,7 @@ import org.andengine.engine.options.resolutionpolicy.RatioResolutionPolicy;
 import org.andengine.entity.modifier.LoopEntityModifier;
 import org.andengine.entity.modifier.ScaleModifier;
 import org.andengine.entity.modifier.SequenceEntityModifier;
-import org.andengine.entity.primitive.Mesh;
-import org.andengine.entity.primitive.DrawMode;
+import org.andengine.entity.primitive.Polygon;
 import org.andengine.entity.scene.IOnSceneTouchListener;
 import org.andengine.entity.scene.Scene;
 import org.andengine.entity.scene.background.Background;
@@ -51,8 +50,8 @@ public class HullAlgorithmExample extends SimpleBaseGameActivity implements OnCl
 			100, -100, Color.WHITE_ABGR_PACKED_FLOAT
 	};
 	private int mMeshVertexCount = 4;
-	private Mesh mMesh;
-	private Mesh mHull;
+	private Polygon mMesh;
+	private Polygon mHull;
 	private float[] mHullVertices;
 	private int mHullVertexCount;
 
@@ -165,14 +164,14 @@ public class HullAlgorithmExample extends SimpleBaseGameActivity implements OnCl
 		final float centerX = HullAlgorithmExample.CAMERA_WIDTH * 0.5f;
 		final float centerY = HullAlgorithmExample.CAMERA_HEIGHT * 0.5f;
 
-		this.mMesh = new Mesh(centerX, centerY, this.mMeshVertices, this.mMeshVertexCount, DrawMode.LINE_LOOP, this.getVertexBufferObjectManager(), DrawType.STATIC);
+		this.mMesh = new Polygon(centerX, centerY, this.mMeshVertices, this.mMeshVertexCount, this.getVertexBufferObjectManager(), DrawType.STATIC);
 		this.getEngine().getScene().attachChild(this.mMesh);
 
 		this.mHullVertices = new float[this.mMeshVertices.length];
 		System.arraycopy(this.mMeshVertices, 0, this.mHullVertices, 0, this.mMeshVertices.length);
 		this.mHullVertexCount = new JarvisMarch().computeHull(this.mHullVertices, this.mMeshVertexCount, 0, 1, 3);
 
-		this.mHull = new Mesh(centerX, centerY, this.mHullVertices, this.mHullVertexCount, DrawMode.LINE_LOOP, this.getVertexBufferObjectManager(), DrawType.STATIC);
+		this.mHull = new Polygon(centerX, centerY, this.mHullVertices, this.mHullVertexCount, this.getVertexBufferObjectManager(), DrawType.STATIC);
 		this.mHull.registerEntityModifier(new LoopEntityModifier(new SequenceEntityModifier(new ScaleModifier(1, 0.95f, 1.05f), new ScaleModifier(1, 1.05f, 0.95f))));
 		this.mHull.setColor(Color.RED);
 		this.getEngine().getScene().attachChild(this.mHull);
