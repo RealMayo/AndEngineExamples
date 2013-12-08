@@ -109,6 +109,7 @@ public class SpriteBenchmark extends BaseBenchmark {
 	// Methods
 	// ===========================================================
 
+	@SuppressWarnings("unused")
 	private void drawUsingSprites(final Scene pScene) {
 		final VertexBufferObjectManager vertexBufferObjectManager = this.getVertexBufferObjectManager();
 		for(int i = 0; i < SpriteBenchmark.SPRITE_COUNT; i++) {
@@ -118,6 +119,7 @@ public class SpriteBenchmark extends BaseBenchmark {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private void drawUsingSpritesWithSharedVertexBuffer(final Scene pScene) {
 		/* As we are creating quite a lot of the same Sprites, we can let them share a VertexBuffer to significantly increase performance. */
 		final ISpriteVertexBufferObject sharedVertexBuffer = new LowMemorySpriteVertexBufferObject(this.getVertexBufferObjectManager(), Sprite.SPRITE_SIZE, DrawType.STATIC, true, Sprite.VERTEXBUFFEROBJECTATTRIBUTES_DEFAULT);

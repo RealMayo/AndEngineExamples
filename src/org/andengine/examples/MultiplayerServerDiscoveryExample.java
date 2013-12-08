@@ -122,6 +122,7 @@ public class MultiplayerServerDiscoveryExample extends SimpleBaseGameActivity im
 	// Methods for/from SuperClass/Interfaces
 	// ===========================================================
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public EngineOptions onCreateEngineOptions() {
 		this.showDialog(DIALOG_CHOOSE_SERVER_OR_CLIENT_ID);
@@ -197,6 +198,7 @@ public class MultiplayerServerDiscoveryExample extends SimpleBaseGameActivity im
 		return scene;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected Dialog onCreateDialog(final int pID) {
 		switch(pID) {

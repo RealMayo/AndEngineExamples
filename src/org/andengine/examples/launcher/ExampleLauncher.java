@@ -54,6 +54,7 @@ public class ExampleLauncher extends ExpandableListActivity {
 	// Constructors
 	// ===========================================================
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -99,6 +100,7 @@ public class ExampleLauncher extends ExpandableListActivity {
 	// Methods for/from SuperClass/Interfaces
 	// ===========================================================
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected Dialog onCreateDialog(final int pId) {
 		switch(pId) {
@@ -157,6 +159,9 @@ public class ExampleLauncher extends ExpandableListActivity {
 		switch(this.mExpandableExampleLauncherListAdapter.getGroup(pGroupPosition)){
 			case BENCHMARK:
 				Toast.makeText(this, "When running a benchmark, a dialog with the results will appear after some seconds.", Toast.LENGTH_SHORT).show();
+				break;
+			default:
+				break;
 		}
 		super.onGroupExpand(pGroupPosition);
 	}

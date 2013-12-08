@@ -74,8 +74,8 @@ public class PVRTextureExample extends SimpleBaseGameActivity {
 
 	@Override
 	public EngineOptions onCreateEngineOptions() {
-		Toast.makeText(this, "The lower houses use MipMaps!", Toast.LENGTH_LONG);
-		Toast.makeText(this, "Click the top half of the screen to zoom in or the bottom half to zoom out!", Toast.LENGTH_LONG);
+		Toast.makeText(this, "The lower houses use MipMaps!", Toast.LENGTH_LONG).show();
+		Toast.makeText(this, "Click the top half of the screen to zoom in or the bottom half to zoom out!", Toast.LENGTH_LONG).show();
 
 		final Camera camera = new SmoothCamera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT, 0, 0, 0.1f) {
 			@Override
@@ -86,6 +86,8 @@ public class PVRTextureExample extends SimpleBaseGameActivity {
 						break;
 					case OUT:
 						this.setZoomFactor(this.getZoomFactor() - 0.1f * pSecondsElapsed);
+						break;
+					default:
 						break;
 				}
 				super.onUpdate(pSecondsElapsed);
