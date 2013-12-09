@@ -115,6 +115,7 @@ public class MultiplayerExample extends SimpleBaseGameActivity implements Client
 	// Methods for/from SuperClass/Interfaces
 	// ===========================================================
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public EngineOptions onCreateEngineOptions() {
 		this.showDialog(DIALOG_CHOOSE_SERVER_OR_CLIENT_ID);
@@ -191,6 +192,7 @@ public class MultiplayerExample extends SimpleBaseGameActivity implements Client
 		return scene;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected Dialog onCreateDialog(final int pID) {
 		switch(pID) {

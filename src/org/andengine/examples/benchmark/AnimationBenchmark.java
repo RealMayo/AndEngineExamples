@@ -114,6 +114,7 @@ public class AnimationBenchmark extends BaseBenchmark {
 		return scene;
 	}
 
+	@SuppressWarnings("unused")
 	private void drawUsingSprites(Scene pScene) {
 		for(int i = 0; i < SPRITE_COUNT; i++) {
 			/* Quickly twinkling face. */
@@ -138,6 +139,7 @@ public class AnimationBenchmark extends BaseBenchmark {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private void drawUsingSpritesWithSharedVertexBuffer(Scene pScene) {
 		/* As we are creating quite a lot of the same Sprites, we can let them share a VertexBuffer to significantly increase performance. */
 		final ITiledSpriteVertexBufferObject faceSharedVertexBuffer = new LowMemoryTiledSpriteVertexBufferObject(this.getVertexBufferObjectManager(), Sprite.SPRITE_SIZE, DrawType.STATIC, true, Sprite.VERTEXBUFFEROBJECTATTRIBUTES_DEFAULT);

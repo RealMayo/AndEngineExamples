@@ -119,6 +119,7 @@ public class MultiplayerBluetoothExample extends SimpleBaseGameActivity implemen
 	// Methods for/from SuperClass/Interfaces
 	// ===========================================================
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(final Bundle pSavedInstanceState) {
 		super.onCreate(pSavedInstanceState);
@@ -139,6 +140,7 @@ public class MultiplayerBluetoothExample extends SimpleBaseGameActivity implemen
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected Dialog onCreateDialog(final int pID) {
 		switch(pID) {
@@ -285,6 +287,7 @@ public class MultiplayerBluetoothExample extends SimpleBaseGameActivity implemen
 		return scene;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onActivityResult(final int pRequestCode, final int pResultCode, final Intent pData) {
 		switch(pRequestCode) {

@@ -118,6 +118,7 @@ public class PongGameActivity extends SimpleBaseGameActivity implements PongCons
 		return new EngineOptions(true, ScreenOrientation.LANDSCAPE_FIXED, new RatioResolutionPolicy(CAMERA_WIDTH, CAMERA_HEIGHT), this.mCamera);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public Engine onCreateEngine(final EngineOptions pEngineOptions) {
 		this.showDialog(DIALOG_CHOOSE_SERVER_OR_CLIENT_ID);
@@ -231,6 +232,7 @@ public class PongGameActivity extends SimpleBaseGameActivity implements PongCons
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected Dialog onCreateDialog(final int pID) {
 		switch(pID) {

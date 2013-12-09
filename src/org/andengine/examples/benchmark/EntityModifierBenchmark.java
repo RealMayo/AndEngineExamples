@@ -109,6 +109,7 @@ public class EntityModifierBenchmark extends BaseBenchmark {
 	// Methods
 	// ===========================================================
 
+	@SuppressWarnings("unused")
 	private void drawUsingSprites(final Scene pScene) {
 		final IEntityModifier faceEntityModifier = new SequenceEntityModifier(
 				new RotationByModifier(2, 90),
@@ -137,6 +138,7 @@ public class EntityModifierBenchmark extends BaseBenchmark {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private void drawUsingSpritesWithSharedVertexBuffer(final Scene pScene) {
 		final IEntityModifier faceEntityModifier = new SequenceEntityModifier(
 				new RotationByModifier(2, 90),
